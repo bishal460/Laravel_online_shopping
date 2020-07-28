@@ -35,6 +35,8 @@ Route::group(['middleware' => ['auth']], function(){
 
     //Route for products
     Route::match(['get','post'],'/admin/add-product','ProductsController@addProduct');
+    Route::get('/admin/view-product','ProductsController@viewProduct');
+    Route::match(['get','post'],'/admin/edit-product/{id}','ProductsController@editProduct');
 
 });
 
